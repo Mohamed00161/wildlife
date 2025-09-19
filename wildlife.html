@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wild Heritage</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 60px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00c853;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00c853;
+    }
+
+  
+    .auth-buttons {
+  display: flex;
+  gap: 10px; 
+}
+
+.auth-buttons .btn {
+  background: #00c853;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 10px 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-buttons .btn:hover {
+  background: #009624;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 128, 0, 0.5)), url('elephants.jpg') center/cover no-repeat;
+  height: 100vh;
+  color: white;
+  display: flex;
+  background-size: cover;
+  background-image: url(/images/closeup-shot-elephants-standing-near-lake-sunset.jpg);
+  flex-direction: column;
+}
+.hero-content {
+  text-align: center;
+  padding: 110px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hero h1 span {
+  color: #fbbf24; 
+}
+
+.hero p {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.explore-btn {
+  background-color: #10b981;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.support-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.stats {
+  margin-top: 40px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.stats strong {
+  font-size: 24px;
+  display: block;
+  color: #45ee2e;
+}
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+  gap: 40px;
+}
+
+
+.landing-text {
+  flex: 1;
+}
+.landing-text h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.landing-text h1 span {
+  display: block;
+  color: #e74c3c;
+}
+.landing-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+.landing-text ol {
+  margin-left: 20px;
+  color: #444;
+}
+.landing-text li {
+  margin-bottom: 10px;
+}
+
+
+.landing-image {
+  flex: 1;
+  text-align: center;
+}
+.landing-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .landing {
+    flex-direction: column;
+    text-align: center;
+  }
+  .landing-text, .landing-image {
+    flex: none;
+    width: 100%;
+  }
+  .landing-text ol {
+    text-align: left;
+  }
+}
+
+  .tours{
+    padding: 50px 20px;
+    text-align: cent
+  }
+
+  .tours h2{
+    font-size: 32px;
+      margin-bottom: 30px;
+      text-align: center;
+  }
+  .tour-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .tour-card{
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+  }
+   .tour-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tour-card img {
+       width: 105%;
+      height: 140px;
+      border-radius:5%;
+      background-size: cover;
+      margin-bottom: 15px;
+    }
+     .tour-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+     .tour-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    
+    .btns{
+       background: #00c853;
+  color: white;
+  border: none;
+  justify-content: center;
+  padding: 10px 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+    }
+    .btns a{
+    text-decoration: none;
+color: white;
+
+}
+
+
+  .services {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .services h2 {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+       box-shadow: 0 4px 8px rgba(12, 7, 7, 0.1);
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .service-card img {
+       width: 105%;
+      height: 140px;
+      border-radius:5%;
+      background-size: cover;
+
+      margin-bottom: 15px;
+    }
+    .service-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    .service-card p {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+    }
+   
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .tour-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .tour-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .tour-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tour-card img {
+      width: 110%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .tour-content {
+      padding: 15px;
+    }
+
+    .tour-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .tour-details {
+      font-size: 14px;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .rating {
+      color: #f39c12;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+    }
+    footer {
+      background: #1e7c1e;;
+      color: #eee;
+      padding: 40px 20px 20px;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    .footer-container h4 {
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #fff;
+    }
+    .footer-container ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-container ul li {
+      margin-bottom: 8px;
+    }
+    .footer-container ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+    .footer-container ul li a:hover {
+      color: #fff;
+    }
+    .currency {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .currency select {
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: none;
+      font-size: 14px;
+    }
+    .social {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .social a {
+      margin: 0 8px;
+      color: #bbb;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .social a:hover {
+      color: #fff;
+    }
+    .featured {
+      text-align: center;
+      border-top: 1px solid #444;
+      margin-top: 30px;
+      padding-top: 20px;
+    }
+    .featured img {
+      margin: 10px 20px;
+      height: 30px;
+      vertical-align: middle;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+    .featured img:hover {
+      opacity: 1;
+      filter: none;
+    }
+    .copy {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 13px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+    <nav>
+    <div class="logo"><img src="/national images/nj.jpeg" height="60" width="100"></div>
+    <ul>
+      <li><a href="/wildlife.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/animal.html">Animals</a></li>
+      <li><a href="/national parks.html">National parks</a></li>
+      <li><a href="/contact.html">contact</a></li>
+    </ul>
+    <div class="auth-buttons">
+  <a href="/sign up.html"><button class="btn">sign up</button></a>
+  <a href="/sign in.html"><button class="btn">sign in</button></a>
+</div>
+  </nav>
+ <section class="hero">
+    <div class="hero-content">
+      <h1>Protect Our <span>Wild Heritage</span></h1>
+      <p>Join us in preserving the magnificent wildlife that calls our planet home. Every action counts in the fight for conservation.</p>
+      <div class="hero-buttons">
+        <button class="explore-btn">Explore Wildlife</button>
+        <button class="support-btn">Support Conservation</button>
+      </div>
+      <div class="stats">
+        <div><strong>1M+</strong><br>Species Protected</div>
+        <div><strong>50+</strong><br>Countries Supported</div>
+        <div><strong>25 Years</strong><br>Of Conservation</div>
+      </div>
+    </div>
+  </section>
+ <section class="landing">
+    <!-- Left Column -->
+    <div class="landing-text">
+      <h1>
+        Discover the Wild Like Never Before
+        <span>"Wild Adventures for Every Explorer"</span>
+      </h1>
+      <p>
+        Experience unforgettable safaris, breathtaking landscapes, and close encounters with nature’s most iconic animals.
+      </p>
+      <ol>
+        <li>With expert guides, tailored packages, and authentic adventures, Wild Tour ensures your journey is safe, memorable, and life-changing.</li>
+        <li>From thrilling wildlife safaris to cultural tours and breathtaking adventures, Wild Tour brings you closer to nature and heritage.</li>
+        <li>All the important contact information laid out for easy reach</li>
+      </ol>
+    </div>
+
+  
+    <div class="landing-image">
+      <img src="/animals images/Zebra.jpg" alt="">
+    </div>
+  </section>
+
+    <section class="tours">
+    <h2>Featured Tours</h2>
+    <div class="tour-list">
+      <div class="tour-card">
+        <img src="/images/ Savannah Wildlife Safari.jpg" alt="Safari">
+        <h3> Savannah Wildlife Safari</h3>
+        <p>Discover the wildlife with our guided safari tours.</p>
+        <button class="btns"><a href="/book now.html">Book Now</a></button>
+      </div>
+
+
+      <div class="tour-card">
+        <img src="/images/Beach Camping.jpg" alt="Beach">
+        <h3>Beach Camping</h3>
+        <p>Relax and camp by the shores under the stars.</p>
+        <button class="btns"><a href="/book now.html">Book Now</a></button>
+      </div>
+    
+      <div class="tour-card">
+        <img src="/images/Safari Lodge – .jpg" alt="Safari">
+        <h3>Safari Lodge </h3>
+        <p>Discover the wildlife with our guided safari tours.</p>
+        <button class="btns"><a href="/book now.html">Book Now</a></button>
+      </div>
+      </section>
+
+      <section  class="tours">
+<div class="tour-list">
+      <div class="tour-card">
+        <img src="/images/Desert Dunes Expedition.jpg" alt="Mountain">
+        <h3>Desert Dunes Expedition</h3>
+        <p>Enjoy breathtaking views on our mountain hiking tours.</p>
+        <button class="btns"><a href="/book now.html">Book Now</a></button>
+      </div>
+
+      <div class="tour-card">
+        <img src="/images/Island .jpg" alt="Beach">
+        <h3>Island Escape</h3>
+        <p>Relax and camp by the shores under the stars.</p>
+        <button class="btns"><a href="/book now.html">Book Now</a></button>
+      </div>
+      <div class="tour-card">
+        <img src="/images/Ocean Breeze .jpeg" alt="Beach">
+        <h3>Ocean Breeze Resort – Zanzibar, Tanzania</h3>
+        <p>Relax and camp by the shores under the stars.</p>
+        <button class="btns"><a href="/book now.html">Book Now</a></button>
+      </div>
+      </div>
+  </section>
+
+   <section class="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service-card">
+        <img src="/images/c1.jpg" alt="Safari">
+        <h3>Wildlife Safaris</h3>
+        <p>Guided trips into national parks and reserves. <br>Chance to see lions, elephants, giraffes, zebras, and more.</p>
+        
+      </div>
+
+    
+      <div class="service-card">
+        <img src="/images/camping.jpg" alt="Camping">
+        <h3>Camping Trips</h3>
+        <p>Overnight stays in tents or eco-lodges. <br>Experience the sounds of nature under the stars.</p>
+      </div>
+
+      <div class="service-card">
+        <img src="/images/boat.jpg" alt="Boat">
+        <h3>Boat Tours</h3>
+        <p>Explore rivers and lakes by boat. <br>Spot hippos, crocodiles, and aquatic birds.</p>
+      </div>
+ </section>
+     <section class="services">
+      <div class="service-list">
+        <div class="service-card">
+        <img src="/images/Photography Tours.jpg" alt="">
+        <h3>Photography Tours</h3>
+        <p>Tailored trips for wildlife <br>Best sunrise and sunset spots.></p>
+      </div>
+
+       <div class="service-card">
+        <img src="/images/Custom & Private Tours.jpg" alt="Bird Watching">
+        <h3>Custom & Private Tours</h3>
+        <p>Visit nearby communities. <br>Experience local traditions, food, and dances.</p>
+      </div>
+
+       <div class="service-card">
+        <img src="/images/Luxury Lodge & Resort Stays.jpg" alt="Luxury Lodge & Resort Stays">
+        <h3>Luxury Lodge & Resort Stays</h3>
+        <p>Stay in top-rated safari lodges. <br>Enjoy pools, spas, and gourmet meals after adventures.</p>
+      </div>
+  </section>
+  <h1>Available Tours</h1>
+  <div class="tour-container">
+    
+    <div class="tour-card">
+      <img src="/images/Safari p.jpg" alt="Safari">
+      <div class="tour-content">
+        <div class="tour-title">Kruger Park Full Day Safari</div>
+        <div class="tour-details">10 hours • Small group • Pickup available</div>
+        <div class="rating">★★★★☆ (4.7/51)</div>
+        <div class="price">From €109.12 / per person</div>
+      </div>
+    </div>
+    
+    <div class="tour-card">
+      <img src="/images/Night Safari.jpg" alt="Night Safari">
+      <div class="tour-content">
+        <div class="tour-title">Evening Pilanesberg Night Safari</div>
+        <div class="tour-details">4 hours • Small group • Pickup available</div>
+        <div class="rating">★★★★☆ (4.6/87)</div>
+        <div class="price">From €46.07 / per person</div>
+      </div>
+    </div>
+    
+    <div class="tour-card">
+      <img src="/images/kenya tour.jpg" alt="kenya tour">
+      <div class="tour-content">
+        <div class="tour-title">marsabit: Half day tour</div>
+        <div class="tour-details">5 hours • Skip the line • Pickup available</div>
+        <div class="rating">★★★★☆ (4.5/180)</div>
+        <div class="price">From €53.35 / per person</div>
+      </div>
+    </div>
+    
+    <div class="tour-card">
+      <img src="/images/masai mara.jpeg" alt="masai mara Tour">
+      <div class="tour-content">
+        <div class="tour-title">masai mara: Half-Day City Tour</div>
+        <div class="tour-details">5 hours • Skip the line • Pickup available</div>
+        <div class="rating">★★★☆☆ (4.2/52)</div>
+        <div class="price">From €91.91 / per person</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+  <div class="footer-container">
+    <div>
+      <h4>Our Statistics</h4>
+      <ul>
+        <li><a href="#">18 Safari Countries</a></li>
+        <li><a href="#">219 Parks & Reserves</a></li>
+        <li><a href="#">14,267 Tour Packages</a></li>
+        <li><a href="#">3,093 Tour Operators</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Safaris by Country</h4>
+      <ul>
+        <li><a href="#">Kenya Safaris</a></li>
+        <li><a href="#">Tanzania Safaris</a></li>
+        <li><a href="#">Uganda Tours</a></li>
+        <li><a href="#">South Africa Safaris</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Safaris by Type</h4>
+      <ul>
+        <li><a href="#">Luxury Safaris</a></li>
+        <li><a href="#">Budget Safaris</a></li>
+        <li><a href="#">Family Safaris</a></li>
+        <li><a href="#">Honeymoons</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>General</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="currency">
+    <label for="currency">Change Currency: </label>
+    <select id="currency">
+      <option>USD $</option>
+      <option>EUR €</option>
+      <option>KES KSh</option>
+    </select>
+  </div>
+
+  <div class="social">
+    <a href="#">🌐</a>
+    <a href="#">🐦</a>
+    <a href="#">📸</a>
+  </div>
+
+  <div class="featured">
+    <span>As Featured In:</span><br>
+    <img src="https://dummyimage.com/120x40/ccc/000.png&text=The+Times" alt="The Times">
+    <img src="https://dummyimage.com/120x40/ccc/000.png&text=CNN" alt="CNN">
+    <img src="https://dummyimage.com/120x40/ccc/000.png&text=Travel+Africa" alt="Travel Africa">
+    <img src="https://dummyimage.com/120x40/ccc/000.png&text=Los+Angeles+Times" alt="LA Times">
+  </div>
+
+  <div class="copy">
+    © 2025 Wild Tour. All Rights Reserved.
+  </div>
+</footer>
+</body>
+</html>

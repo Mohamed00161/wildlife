@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  position: sticky;
+  background: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #2c3e50;
+  color: #fff;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: #1abc9c;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+  width: calc(100% - 220px);
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.topbar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* Table */
+#table-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+#tableBody button{
+background: #2c3e50;
+  padding: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  color: white;
+}
+#tableBody button:hover{
+  background-color: #db3e3e;
+}
+#table-section h3 {
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 16px;
+  background-color: #cbdbd2;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background: #2c3e50;
+  color: white;
+}
+
+table tr:hover {
+  background: #f9f9f9;
+}
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .landing {
+    flex-direction: column;
+    text-align: center;
+  }
+  .landing-text, .landing-image {
+    flex: none;
+    width: 100%;
+  }
+  .landing-text ol {
+    text-align: left;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Wild Tour Admin</h2>
+    <ul>
+      <li><a href="#">🏠 Dashboard</a></li>
+      <li><a href="/Dashboard/admin.html">📋 Bookings</a></li>
+      <!-- <li><a href="/Dashboard/tour.html">🦁 Tours</a></li> -->
+      <li><a href="/Dashboard/users.html">👤 Users</a></li>
+      <!-- <li><a href="/Dashboard/settings.html">⚙️ Settings</a></li> -->
+      <li><a href="/sign in.html">🚪 Logout</a></li>
+    </ul>
+  </div>
+
+  Main Content
+  <div class="main-content">
+    
+    <div class="topbar">
+      <h2>Dashboard</h2>
+      <input type="text" placeholder="Search...">
+    </div>
+
+  
+    <div class="cards">
+      <div class="card">
+        <h3>Total Bookings</h3>
+        <p></p>
+      </div>
+      <div class="card">
+        <h3>Active Tours</h3>
+        <p></p>
+      </div>
+      <div class="card">
+        <h3>Users</h3>
+        <p></p>
+      </div>
+      <div class="card">
+        <h3>Revenue</h3>
+        <p></p>
+      </div>
+    </div>
+
+    
+      <h2>Bookings</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Package</th>
+        <th>Date</th>
+        <th>Guests</th>
+        <th>Requests</th>
+        <th>Actions</th>
+        <!-- <th>Actions</th> -->
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <!-- rows will appear here -->
+    </tbody>
+  </table>
+  
+
+<script src="/Dashboard/admin.js"></script>
+</body>
+</html>

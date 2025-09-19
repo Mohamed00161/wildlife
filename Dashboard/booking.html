@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookings Dashboard</title>
+  <style>
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  background: #f4f6f9;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: #2c3e50;
+  color: #fff;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background: #1abc9c;
+}
+
+/* Main */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background: #f4f6f9;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar h2 { margin: 0; }
+.topbar button {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Table */
+.table-section {
+  margin-top: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+th {
+  background: #2c3e50;
+  color: white;
+}
+button.action-btn {
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.edit { background: #2980b9; color: white; }
+.delete { background: #e74c3c; color: white; }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 400px;
+  margin: 10% auto;
+  border-radius: 5px;
+}
+.close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+form label {
+  display: block;
+  margin-top: 10px;
+}
+form input, form select, form button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+form button {
+  margin-top: 15px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Wild Tour Admin</h2>
+    <ul>
+      <li><a href="/Dashboard/admin.html">🏠 Dashboard</a></li>
+      <li><a href="#">📋 Bookings</a></li>
+      <li><a href="/Dashboard/tour.html">🦁 Tours</a></li>
+      <li><a href="/Dashboard/users.html">👤 Users</a></li>
+      <li><a href="/Dashboard/settings.html">⚙️ Settings</a></li>
+      <li><a href="/sign in.html">🚪 Logout</a></li>
+    </ul>
+  </div>
+
+  <!-- Main -->
+  <div class="main-content">
+    <div class="topbar">
+      <h2>Booking Dashboard</h2>
+      <button id="addBookingBtn">➕ Add Booking</button>
+    </div>
+
+    <!-- Bookings Table -->
+    <div class="table-section">
+      <h3>All Bookings</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Tour</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="bookingTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal for Adding/Editing Bookings -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modalTitle">Add Booking</h3>
+       <form id="bookingForm">
+        <input type="hidden" id="bookingId">
+
+        <label>Customer Name:</label>
+        <input type="text" id="customerName" required>
+
+        <label>Tour:</label>
+        <input type="text" id="tourName" required>
+
+        <label>Date:</label>
+        <input type="date" id="bookingDate" required>
+
+        <label>Status:</label>
+        <select id="bookingStatus">
+          <option value="Confirmed">Confirmed</option>
+          <option value="Pending">Pending</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+
+        <button type="submit">Save Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="bookings-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Wild Tour</title>
+  <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 60px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00c853;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00c853;
+    }
+
+    .auth-buttons {
+  display: flex;
+  gap: 10px; /* space between buttons */
+}
+
+.auth-buttons .btn {
+  background: #00c853;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 10px 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-buttons .btn:hover {
+  background: #009624;
+}
+
+
+    /* Hero */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1523978591478-c753949ff840') no-repeat center center/cover;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    /* Contact Section */
+    #contact {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    #contact-info {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    #contact-info h2 {
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+
+    #contact-info p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    #contact-form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    #contact-form h2 {
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+
+    #form-group {
+      margin-bottom: 15px;
+    }
+
+    #form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    #form-group input,
+    #form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    #form-group textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    #form-group button {
+      background: #00c853;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    #form-group button:hover {
+      background: #009624;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+    }
+    footer {
+      background: #1e7c1e;;
+      color: #eee;
+      padding: 40px 20px 20px;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    .footer-container h4 {
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #fff;
+    }
+    .footer-container ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-container ul li {
+      margin-bottom: 8px;
+    }
+    .footer-container ul li a {
+      text-decoration: none;
+      color: whitesmoke;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+    .footer-container ul li a:hover {
+      color: #fff;
+    }
+    .currency {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .currency select {
+      padding: 6px 12px;
+      border-radius: 4px;
+      border: none;
+      font-size: 14px;
+    }
+    .social {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .social a {
+      margin: 0 8px;
+      color: #bbb;
+      font-size: 18px;
+      text-decoration: none;
+    }
+    .social a:hover {
+      color: #fff;
+    }
+    .featured {
+      text-align: center;
+      border-top: 1px solid #444;
+      margin-top: 30px;
+      padding-top: 20px;
+    }
+    .featured img {
+      margin: 10px 20px;
+      height: 30px;
+      vertical-align: middle;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+    .featured img:hover {
+      opacity: 1;
+      filter: none;
+    }
+    .copy {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #aaa;
+    }
+
+   
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo"><img src="/national images/nj.jpeg" height="60" width="100"></div>
+    <ul>
+      <li><a href="/wildlife.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/animal.html">Animals</a></li>
+      <li><a href="/gallery.html">Gallery</a></li>
+      <li><a href="/contact.html" >Contact</a></li>
+    </ul>
+     <div class="auth-buttons">
+  <a href="/sign up.html"><button class="btn">sign up</button></a>
+  <button class="btn">sign in</button>
+</div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Contact Us</h1>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <!-- Contact Info -->
+    <div id="contact-info">
+      <h2>Get in Touch</h2>
+      <p><strong>Email:</strong> info@wildtour.com</p>
+      <p><strong>Phone:</strong> +254 700 123 456</p>
+      <p><strong>Location:</strong> Nairobi, Kenya</p>
+      <p>Have questions about our tours, safaris, or conservation efforts? 
+         Reach out to us, and we’ll be happy to assist.</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div id="contact-form">
+      <h2>Send a Message</h2>
+      <form id="form-group">
+        <div >
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>
+        <div id="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div id="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Write your message" required></textarea>
+        </div>
+        <div id="form-group">
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+   <footer>
+<div class="footer-container">
+    <div>
+      <h4>Our Statistics</h4>
+      <ul>
+        <li><a href="#">18 Safari Countries</a></li>
+        <li><a href="#">219 Parks & Reserves</a></li>
+        <li><a href="#">14,267 Tour Packages</a></li>
+        <li><a href="#">3,093 Tour Operators</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Safaris by Country</h4>
+      <ul>
+        <li><a href="#">Kenya Safaris</a></li>
+        <li><a href="#">Tanzania Safaris</a></li>
+        <li><a href="#">Uganda Tours</a></li>
+        <li><a href="#">South Africa Safaris</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Safaris by Type</h4>
+      <ul>
+        <li><a href="#">Luxury Safaris</a></li>
+        <li><a href="#">Budget Safaris</a></li>
+        <li><a href="#">Family Safaris</a></li>
+        <li><a href="#">Honeymoons</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>General</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="currency">
+    <label for="currency">Change Currency: </label>
+    <select id="currency">
+      <option>USD $</option>
+      <option>EUR €</option>
+      <option>KES KSh</option>
+    </select>
+  </div>
+
+  <div class="social">
+    <a href="#">🌐</a>
+    <a href="#">🐦</a>
+    <a href="#">📸</a>
+  </div>
+
+  <div class="featured">
+    <span>As Featured In:</span><br>
+    <img src="https://dummyimage.com/120x40/ccc/000.png&text=The+Times" alt="The Times">
+    <img src="https://dummyimage.com/120x40/ccc/000.png&text=CNN" alt="CNN">
+    <img src="https://dummyimage.com/120x40/ccc/000.png&text=Travel+Africa" alt="Travel Africa">
+    <img src="https://dummyimage.com/120x40/ccc/000.png&text=Los+Angeles+Times" alt="LA Times">
+  </div>
+
+  <div class="copy">
+    © 2025 Wild Tour. All Rights Reserved.
+  </div>
+</footer>
+<script src="/Dashboard/admin.js"></script>
+</body>
+</html>

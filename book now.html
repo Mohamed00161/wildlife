@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Form</title>
+  <style>
+           * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 60px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00c853;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00c853;
+    }
+
+  
+    .auth-buttons {
+  display: flex;
+  gap: 10px; 
+}
+
+.auth-buttons .btn {
+  background: #00c853;
+  color: white;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 10px 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-buttons .btn:hover {
+  background: #009624;
+}
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+    }
+
+    #booking-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      margin-top: 200px;
+      border-radius: 12px;
+      transform: scale(0.9);
+      width: 450px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      color: white;
+      
+    }
+
+    #booking-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00c853;
+    }
+
+    #booking-container label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 14px;
+    }
+
+    #booking-container input,
+    #booking-container select,
+    #booking-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    #booking-container textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    #booking-container button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #00c853;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #booking-container button:hover {
+      background: #009624;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><img src="/national images/nj.jpeg" height="60" width="100"></div>
+    <ul>
+      <li><a href="/wildlife.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/animal.html">Animals</a></li>
+      <li><a href="/gallery.html">Gallery</a></li>
+      <li><a href="/contact.html">contact</a></li>
+    </ul>
+    <div class="auth-buttons">
+   <a href="/sign in.html"><button class="btn">sign in</button></a>
+  <a href="/wildlife.html"><button class="btn">sign out</button></a>
+</div>
+</nav>
+  <!-- <div id="booking-container">
+    <h2>Book Your Tour</h2>
+    <form action="#">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+      <label for="package">Select Package</label>
+      <select id="package" required>
+        <option value="">-- Choose a Tour --</option>
+        <option value="safari">Safari Adventure</option>
+        <option value="mountain">Mountain Hike</option>
+        <option value="beach">Beach Escape</option>
+        <option value="forest">Forest Camping</option>
+        <option value="Safari Lodge">Safari Lodge</option>
+        <option value="Desert Dunes Expedition">Desert Dunes Expedition</option>
+        <option value="Ocean Breeze Resort – Zanzibar, Tanzania">Ocean Breeze Resort – Zanzibar, Tanzania</option>
+        <option value="Kilimanjaro Base Hotel – Moshi, Tanzania">Kilimanjaro Base Hotel – Moshi, Tanzania</option>
+      </select>
+
+      <label for="date">Select Date</label>
+      <input type="date" id="date" required>
+
+      <label for="guests">Number of Guests</label>
+      <input type="number" id="guests" min="1" max="20" value="1" required>
+
+      <label for="requests">Special Requests</label>
+      <textarea id="requests" placeholder="Enter any special requests..."></textarea>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div> -->
+
+
+  <div id="booking-container">
+  <h2>Book Your Tour</h2>
+  <form id="booking-form">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Enter your email" required>
+
+    <label for="phone">Phone</label>
+    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+    <label for="package">Select Package</label>
+    <select id="package" required>
+      <option value="">-- Choose a Tour --</option>
+      <option value="safari">Safari Adventure</option>
+      <option value="mountain">Mountain Hike</option>
+      <option value="beach">Beach Escape</option>
+      <option value="forest">Forest Camping</option>
+      <option value="Safari Lodge">Safari Lodge</option>
+      <option value="Desert Dunes Expedition">Desert Dunes Expedition</option>
+      <option value="Ocean Breeze Resort – Zanzibar, Tanzania">Ocean Breeze Resort – Zanzibar, Tanzania</option>
+      <option value="Kilimanjaro Base Hotel – Moshi, Tanzania">Kilimanjaro Base Hotel – Moshi, Tanzania</option>
+    </select>
+
+    <label for="date">Select Date</label>
+    <input type="date" id="date" required>
+
+    <label for="guests">Number of Guests</label>
+    <input type="number" id="guests" min="1" max="20" value="1" required>
+
+    <label for="requests">Special Requests</label>
+    <textarea id="requests" placeholder="Enter any special requests..."></textarea>
+
+    <button type="submit">Confirm Booking</button>
+  </form>
+</div>
+
+
+<script src="/Dashboard/admin.js"></script>
+</body>
+</html>

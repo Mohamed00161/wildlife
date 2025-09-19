@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <style>
+
+       * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 60px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00c853;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00c853;
+    }
+
+  
+    .auth-buttons {
+  display: flex;
+  gap: 10px; /* space between buttons */
+}
+
+.auth-buttons .btn {
+  background: #00c853;
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 10px 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-buttons .btn:hover {
+  background: #009624;
+}
+    body {
+      font-family: Arial, sans-serif;
+      background :white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    #signin-container {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      width: 320px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    #signin-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00c853;
+    }
+
+    #signin-container label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 14px;
+    }
+
+    #signin-container input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    #signin-role{
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      transition: border 0.3s;
+
+    }
+
+    
+
+    #signin-container button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #00c853;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #signin-container button:hover {
+      background: #009624;
+    }
+
+    #signin-container p {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    #signin-container p a {
+      color: #00c853;
+      text-decoration: none;
+    }
+
+    #signin-container p a:hover {
+      text-decoration: underline;
+    } 
+
+
+
+  </style>
+</head>
+<body>
+
+     <nav>
+    <div class="logo"><img src="/national images/nj.jpeg" height="60" width="100"></div>
+    <ul>
+      <li><a href="/wildlife.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/animal.html">Animals</a></li>
+      <li><a href="/gallery.html">Gallery</a></li>
+      <li><a href="/contact.html">contact</a></li>
+    </ul>
+    <div class="auth-buttons">
+
+  <a href="/wildlife.html"><button class="btn">sign out</button></a>
+</div>
+</nav>
+  <div id="signin-container">
+      <h2>Sign In</h2>
+       <form id="signin-form">
+        <label for="email">Email</label>
+        <input type="email" id="signin-email" placeholder="Enter your email" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="signin-password" placeholder="Enter your password" required>
+        
+        <button type="submit">Sign In</button>
+      </form>
+      <p>Don't have an account? <a href="/sign up.html">Sign Up</a></p>
+    </div>
+
+    
+
+
+
+
+    
+
+
+  <script defer src="/Dashboard/admin.js" ></script>
+
+</body>
+</html>
